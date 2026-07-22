@@ -1531,18 +1531,10 @@ max-width:100%;
 border-radius:16px;
 
 }
-
 }
-/* Vídeo da apresentação */
-.hero-video{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.hero-video video{
+.hero-media video{
     width:100%;
-    max-width:500px;
+    height:100%;
+    object-fit:cover;
     border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
