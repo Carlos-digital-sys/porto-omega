@@ -1,86 +1,203 @@
-// ================================
-// MENU MOBILE
-// ================================
+/*=========================================
+PORTO ÔMEGA
+EVILÁSIO PRODUTOS NATURAIS
+=========================================*/
 
-const menuBtn = document.querySelector(".menu-mobile");
 const menu = document.querySelector(".menu");
+const menuButton = document.querySelector(".menu-mobile");
 
-menuBtn.addEventListener("click", () => {
+menuButton.addEventListener("click",()=>{
+
     menu.classList.toggle("active");
-});
 
-// ================================
-// HEADER SCROLL EFFECT
-// ================================
+    if(menu.classList.contains("active")){
 
-const header = document.querySelector(".header");
+        menuButton.innerHTML='<i class="fas fa-times"></i>';
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 80) {
-        header.classList.add("active");
-    } else {
-        header.classList.remove("active");
+    }else{
+
+        menuButton.innerHTML='<i class="fas fa-bars"></i>';
+
     }
+
 });
 
-// ================================
-// SCROLL TOP BUTTON
-// ================================
+/*=========================================
+FECHAR MENU AO CLICAR
+=========================================*/
 
-const scrollBtn = document.querySelector(".scroll-top");
+document.querySelectorAll(".menu a").forEach(link=>{
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 600) {
-        scrollBtn.classList.add("active");
-    } else {
-        scrollBtn.classList.remove("active");
+    link.addEventListener("click",()=>{
+
+        menu.classList.remove("active");
+
+        menuButton.innerHTML='<i class="fas fa-bars"></i>';
+
+    });
+
+});
+
+/*=========================================
+HEADER
+=========================================*/
+
+const header=document.querySelector(".header");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>80){
+
+        header.style.boxShadow="0 10px 35px rgba(0,0,0,.08)";
+        header.style.background="rgba(255,255,255,.98)";
+
+    }else{
+
+        header.style.boxShadow="none";
+        header.style.background="rgba(255,255,255,.95)";
+
     }
+
 });
 
-scrollBtn.addEventListener("click", () => {
+/*=========================================
+BOTÃO VOLTAR TOPO
+=========================================*/
+
+const scrollButton=document.querySelector(".scroll-top");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>500){
+
+        scrollButton.classList.add("show");
+
+    }else{
+
+        scrollButton.classList.remove("show");
+
+    }
+
+});
+
+scrollButton.addEventListener("click",()=>{
+
     window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+
+        top:0,
+
+        behavior:"smooth"
+
     });
+
 });
 
-// ================================
-// SMOOTH SCROLL LINKS
-// ================================
+/*=========================================
+ANIMAÇÃO AO ROLAR
+=========================================*/
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
+const elements=document.querySelectorAll(
 
-        const target = document.querySelector(this.getAttribute("href"));
+".benefit-card,.product-image,.product-content,.gel-image,.gel-content,.video-card,.number-item,.reseller-item,.contact-section"
 
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    });
-});
-
-// ================================
-// SIMPLE REVEAL ANIMATION
-// ================================
-
-const elements = document.querySelectorAll(
-    ".benefit-card, .product-section, .gel-section, .video-card, .testimonial-card, .reseller-section"
 );
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, {
-    threshold: 0.15
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
 });
 
-elements.forEach(el => {
-    el.classList.add("hidden");
-    observer.observe(el);
+},{
+
+threshold:.15
+
 });
+
+elements.forEach(el=>{
+
+el.style.opacity="0";
+
+el.style.transform="translateY(45px)";
+
+el.style.transition=".8s";
+
+observer.observe(el);
+
+});
+
+/*=========================================
+SCROLL SUAVE
+=========================================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const target=document.querySelector(this.getAttribute("href"));
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+});
+
+});
+
+/*=========================================
+CARREGAMENTO
+=========================================*/
+
+window.addEventListener("load",()=>{
+
+document.body.style.opacity="1";
+
+});
+
+/*=========================================
+EFEITO HOVER PRODUTOS
+=========================================*/
+
+document.querySelectorAll(".product-image img,.gel-image img").forEach(img=>{
+
+img.addEventListener("mousemove",(e)=>{
+
+const x=e.offsetX;
+const y=e.offsetY;
+
+img.style.transform=`perspective(900px)
+rotateY(${(x-150)/30}deg)
+rotateX(${-(y-150)/30}deg)
+scale(1.04)`;
+
+});
+
+img.addEventListener("mouseleave",()=>{
+
+img.style.transform="perspective(900px) rotateY(0) rotateX(0) scale(1)";
+
+});
+
+});
+
+/*=========================================
+FINAL
+=========================================*/
+
+console.log("Porto Ômega carregado com sucesso.");
