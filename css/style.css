@@ -1533,3 +1533,16 @@ border-radius:16px;
 }
 
 }
+/* Vídeo da apresentação */
+.hero-video{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-video video{
+    width:100%;
+    max-width:500px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
