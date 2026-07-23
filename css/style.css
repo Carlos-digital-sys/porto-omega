@@ -4,16 +4,17 @@ EVILÁSIO PRODUTOS NATURAIS
 ==================================================*/
 
 :root{
+    --primary:#D6A84E;
+    --secondary:#111111;
+    --white:#ffffff;
+    --light:#f8f8f8;
+    --text:#555555;
 
---primary:#D6A84E;
---secondary:#111111;
---white:#ffffff;
---light:#f8f8f8;
---text:#555555;
---radius:18px;
---shadow:0 20px 50px rgba(0,0,0,.08);
---transition:.35s;
+    --gold:#D6A84E;
 
+    --radius:18px;
+    --shadow:0 20px 50px rgba(0,0,0,.08);
+    --transition:.35s;
 }
 
 *{
