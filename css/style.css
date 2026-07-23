@@ -671,6 +671,9 @@ transform:translateY(-12px);
 }
 
 .benefit-card i{
+    .benefit-icon i{
+    color:var(--primary) !important;
+}
 
 font-size:48px;
 margin-bottom:22px;
