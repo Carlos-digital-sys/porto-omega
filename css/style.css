@@ -277,7 +277,7 @@ right:-250px;
 
 top:-300px;
 
-background:radial-gradient(circle,var(--gold) 0%,transparent 70%);
+background:radial-gradient(circle,var(--primary) 0%,transparent 70%);
 
 opacity:.18;
 
@@ -580,7 +580,7 @@ transition:var(--transition);
 
 transform:translateY(-10px);
 
-border-color:var(--gold);
+border-color:var(--primary);
 
 }
 
