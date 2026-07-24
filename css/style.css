@@ -135,11 +135,13 @@ background:linear-gradient(180deg,#fff,#fafafa);
 
 }
 
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 0.7fr;
-    gap: 50px;
-    align-items: center;
+.hero-grid{
+
+display:grid;
+grid-template-columns: 1fr 0.7fr;
+gap:70px;
+align-items:center;
+
 }
 
 .hero-content h1{
