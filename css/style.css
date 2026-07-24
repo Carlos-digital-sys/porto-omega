@@ -1557,10 +1557,10 @@ border-radius:16px;
         font-size: 32px;
     }
 
-    .hero-video {
-        width: 100%;
-        max-width: 350px;
-        height: 450px;
-        justify-self: center;
-    }
+    .hero-media {
+    width: 100%;
+    max-width: 350px;
+    height: 450px;
+    justify-self: center;
+}
 }
