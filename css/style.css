@@ -1532,23 +1532,61 @@ border-radius:16px;
     object-fit:cover;
     border-radius:20px;
 }
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    .hero {
-        padding-top: 80px;
-        padding-bottom: 50px;
+    .hero{
+        padding:110px 20px 60px;
     }
 
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    @media(max-width:768px){
+
+.hero-grid{
+    display:flex;
+    flex-direction:column;
+}
+
+}
+
+    .hero-text{
+        width:100%;
     }
 
-    .hero-media {
-        width: 100%;
-        max-width: 350px;
-        height: 450px;
-        justify-self: center;
+    .hero h1{
+        font-size:42px;
+        line-height:1.1;
+        word-break:break-word;
     }
 
+    .hero p{
+        font-size:17px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons a{
+        width:100%;
+        justify-content:center;
+    }
+
+    .hero-info{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        width:100%;
+    }
+}
+.hero-video{
+    width:100%;
+    overflow:hidden;
+    border-radius:24px;
+    margin-bottom:25px;
+}
+
+.hero-video video{
+    width:100%;
+    display:block;
+    object-fit:cover;
 }
