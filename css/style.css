@@ -1542,3 +1542,25 @@ border-radius:16px;
     object-fit:cover;
     border-radius:20px;
 }
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-video {
+        width: 100%;
+        max-width: 350px;
+        height: 450px;
+        justify-self: center;
+    }
+}
